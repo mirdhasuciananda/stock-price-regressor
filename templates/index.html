@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+        rel="stylesheet"
+    />
+    <title>Stock Price Regresor App</title>
+</head>
+<body>
+    <section
+        class="
+            flex
+            justify-center
+            items-center
+            w-screen
+            h-screen
+            bg-indigo-500
+        "
+    >
+        <main
+            class="
+                flex flex-col
+                justify-center
+                items-center
+                p-16
+                bg-white
+                rounded-lg
+            "
+        >
+            <h1 class="text-3x1 text-bold">Simple Stock Regressor</h1>
+
+            <form method="POST">
+                <label for="n_days">Masukkan jumlah hari prediksi (1-60): </label><br>
+                <input type="text" id="n_days" name="n_days"><br>
+                <button
+                    type="submit"
+                    class="p-4 bg-indigo-500 text-white rounded-md"
+                >
+                    Tampilkan prediksi
+                </button>
+            </form>
+
+             {% if uploaded_image %}
+            <img
+                src="{{ url_for('send_uploaded_image', filename=uploaded_image) }}"
+                class="mt-12 mb-8 h-60 border-12 border-gray-200 rounded-md"
+            />
+            {% endif %}
+
+        </main>
+    </section>
+</body>
+</html>
